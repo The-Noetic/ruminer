@@ -1,0 +1,59 @@
+site_name: The Paths of Aro
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - header.autohide
+  palette:
+      # Palette toggle for light mode
+    - scheme: default
+      primary: deep orange
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    text: Nunito
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+extra_css:
+  - stylesheets/extra.css
+plugins:
+  - meta
+  - blog:
+      blog_dir: . 
+      archive: false
+      post_date_format: medium
+      post_url_date_format: yyyy
+      post_url_format: "{categories}/{slug}"
+      post_url_max_categories: 5
+      categories_toc: false
+  - search
+  - tags
+nav:
+  - index.md
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+repo_url: https://github.com/rishikanthc/pathsofaro
+repo_name: rishikanthc/pathsofaro
+
