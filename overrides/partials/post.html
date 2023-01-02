@@ -24,7 +24,10 @@
 <article class="md-post md-post--excerpt">
  <!-- Post content -->
   <div class="md-post__content md-typeset">
-    <a href="{{ post.url | url }}">
+      <span class="twemoji custom">
+        {% include ".icons/octicons/container-16.svg" %} 
+      </span>
+    <a class="ca" href="{{ post.url | url }}">
       {{ post.title }}
     </a>
   </div>

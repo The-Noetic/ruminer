@@ -1,6 +1,6 @@
 .md-header--shadow {
   box-shadow: none;
-  background-color: transparent; //#fffaf3
+  background-color: white; //#fffaf3
 }
 
 .md-header {
@@ -26,7 +26,7 @@
 }
 
 .md-content .md-typeset a {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   letter-spacing: 0.40014px;
   line-height: 28px;
 }
@@ -36,8 +36,8 @@
 }
 
 .md-header__inner {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  // margin-top: 30px;
+  // margin-bottom: 30px;
 }
 
 .md-header__topic:first-child {
@@ -52,3 +52,11 @@
 .md-nav {
   font-size: 0.8rem;
 }
+
+.custom {
+  height: 15px;
+  width: 15px;
+  padding-top: 5px;
+  margin-right: 10px;
+}
+
