@@ -22,17 +22,52 @@
 
 <!-- Post excerpt -->
 <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+
+    <!-- Post metadata -->
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+
+        <!-- Post date -->
+        <li class="md-meta__item">
+          <time datetime="{{ post.meta.date }}">
+            {{- post.meta.date_format -}}
+          </time>
+          {#- Collapse whitespace -#}
+        </li>
+
+        <!-- Post readtime -->
+        {% if post.meta.readtime %}
+          {% set time = post.meta.readtime %}
+          <li class="md-meta__item">
+            {% if time == 1 %}
+              {{ lang.t("readtime.one") }}
+            {% else %}
+              {{ lang.t("readtime.other") | replace("#", time) }}
+            {% endif %}
+          </li>
+        {% endif %}
+      </ul>
+
+      <!-- Draft marker -->
+      {% if post.meta.draft %}
+        <span class="md-draft">
+          {{ lang.t("blog.draft") }}
+        </span>
+      {% endif %}
+    </div>
+  </header>
+
   <!-- Post content -->
   <div class="md-post__content md-typeset">
+    {{ post.content }}
+
     <!-- Continue reading link -->
-    <h3>
-    <span class="twemoji custom">
-      {% include ".icons/octicons/container-16.svg" %} 
-    </span>
-    <a href="{{ post.url | url }}">
-      {{ post.title }}
-    </a>
-    </h3>
+    <nav class="md-post__action">
+      <a href="{{ post.url | url }}">
+        {{ lang.t("blog.continue") }}
+      </a>
+    </nav>
   </div>
 </article>
 

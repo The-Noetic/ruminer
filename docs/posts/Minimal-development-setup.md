@@ -1,24 +1,56 @@
 ---
 date: 2022-12-31
+desc: Prudent procrastination as a productivity hack
 categories:
-  - Dev
-  - Coding
+  - Programming
 ---
 
-# Minimal development setup for programming
+# My Development Setup
 
-A functional development setup is essential for productive programming sessions. Over the past years
-I have continuously upgraded my programming setup striving to improve it. Each developer has their
-own preferences when it comes to the tools they use for coding. 
+Developers have strong personal opinions about the tools they use for programming. Considering we
+spend a significant amount of time using these tools, a functional development setup is essential
+for productive programming sessions.
+
+<!-- more -->
+Over the past years I have continuously upgraded my programming setup striving to improve it.
+I prefer a setup that is easy to configure, minimal, functional and lightweight. As a Machine
+Learning developer most of my work is in the cloud and for that reason I want my setup to be as
+portable as possible so that I can easily configure them on any new instance I spawn.
+
+As a fan of minimalism my setup simply consists of a terminal, a browser and Roam Research. The
+tools I use are CLI based and consist of a text editor, a git client and few CLI
+Rust utilities all of which are Rust apps. Below are the detailed instructions to recreate my setup.
+
+## Installing Pre-requisites
+
+First order of business install some basic packages to setup the rest of the env. These include
+`curl, cmake, g++, git`. MacOS comes with all of them installed. On linux run
+```bash
+sudo apt install -y curl cmake g++ git
+```
+
+Most of my development environment is Rust based and hence we next install Rust with
+```bash
+curl https://sh.rustup.rs -sSf | sh
+```
+
+If you are using MacOS, then it is a good idea to install the [brew](https://brew.sh/) package manager as well.
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 ## Terminal
 
-I'm a big fan of the CLI and hence have constructed my workflow around the terminal. Naturally the
-choice of terminal is the most important one. I went with [Alacritty](https://alacritty.org/) an
-OpenGL terminal emulator that is super fast (Claims to be the fastest temrinal), minimal and ships
+After experimenting with hyper (which was too heavy) and iterm, I went with [Alacritty](https://alacritty.org/) a
+Rust based OpenGL terminal emulator that is super fast (Claims to be the fastest temrinal), minimal and ships
 with sensible defaults. Some of the features include Vi mode for moving around and selections, and
 built-in search. 
 
+### Installation
+To install Alacritty run:
+```bash
+cargo install alacritty
+```
 Alacritty can be easily configured/extended by specifying the settings in a `alacritty.yml` file
 placed in `~/.config/alacritty/`. Below is my configuration
 
@@ -69,24 +101,41 @@ colors:
     white:   '0xdfbf8e'
  
 key_bindings:
-- { key: S,        mods: Alt,     chars: "\x1bs"                       }
-- { key: C,        mods: Alt,     chars: "\x1bC"                       }
+- { key: S, mods: Alt, chars: "\x1bs" }
+- { key: C, mods: Alt, chars: "\x1bC" }
+- { key: Period, mods: Alt, chars: "\x1b." }
+- { key: Semicolon, mods: Alt, chars: "\x1b;" }
 ```
 
 ## Editor
 
 For a long time I was using Neovim until I came across [helix](https://helix-editor.com/). 
 Neovim is fast, lightweight and highly extensible with a rich plugin ecosystem supported by a large
-community. However, configuring neovim is an arduous process and often takes a few hours of hacking
-to get it right exactly. That and the need for constantly looking out for new plugins for the features
-I need was tiring. Moreover it's not easy to port the configuration from one machine to another.
+community. However, configuring neovim is an arduous process and often takes a several hours of hacking
+to get it working correctly. This also makes it difficult to recreate the setup on multiple machines.
 
-Helix on the other hand is refreshingly functional, minimal and fast out of the box. It ships with
+Helix is a Rust based terminal that is refreshingly functional, minimal and fast out of the box. It ships with
 inbuilt support for Tree-Sitter, LSPs, multiple-cursors, Fuzzy finder, navigation of syntax tree nodes
-and many more. It has all the functionality I need out of the box without need for any configuration. 
+and many more. It has all the functionality I need out of the box without need for any plugins/complex
+configuration. 
 Written in Rust, Helix is exceptionally fast and handles large files with ease. Considering it has
 been around only for a year I find Helix to be impressive. The development community is active and
 a plugin ecosystem is expected to be implemented in future releases.
+
+### Installation
+On the MacOS Helix can be installed with
+```bash
+brew install helix
+```
+
+On Linux, download the binary from [here](https://github.com/helix-editor/helix/releases). Extract
+the contents and copy the `hx` binary to `~/.local/bin` or `/usr/opt/bin`. If you use the former
+ensure that `~/.local/bin` exists in your `PATH`. Then move the `runtime` folder to `~/.config/helix`.
+As the final step run:
+```bash
+hx --grammar fetch
+hx --grammar build
+```
 
 Helix can also be configured like alacritty via a `config.toml` placed in `~/.config/helix/`. My
 config simply installs the gruvbox material theme and the buffer and status lines.
@@ -243,6 +292,12 @@ gitui is blazing fast and supports all features I need.
 There were a couple things I configured which were the key-bindings and minor tweaks to the UI. The default
 UI had some readability issues which were easily fixed by changing colors.
 
+### Installation
+gitui can be installed from its crate by running
+```bash
+cargo install gitui
+```
+
 The key bindings can be configured by putting a `key_bindings.ron` file in `~/.config/gitui` and the theme via
 a `theme.ron` in the same directory.
 
@@ -291,3 +346,16 @@ My `theme.ron`
     branch_fg: LightYellow,
 )
 ```
+
+## Terminal Utilities
+
+Apart from the above tools, I like to replace few of the bash commands/apps with a better version of them
+written in Rust. Some of them are for appearance and some for functionality. All of these apps can be
+installed via cargo by running `cargo install <app-name>`
+
+- [Starship](starship.rs) is a custom command cross-shell prompt that is minimal, customizable and blazing fast.
+- [xcp](https://github.com/tarka/xcp/) is a clone of the Unix `cp` which is optimized and more efficient.
+- [lsd](https://github.com/Peltoche/lsd) is a rewrite of GNU `ls` with added features like color, icons, tree-view etc
+- [bartib](https://github.com/nikolassv/bartib) A small command line tool for time tracking
+- [topgrade](https://github.com/topgrade-rs/topgrade) A tool that detects and updates all apps across all package managers
+

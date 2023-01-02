@@ -7,7 +7,7 @@ theme:
   palette:
       # Palette toggle for light mode
     - scheme: default
-      primary: amber
+      primary: deep orange
       accent: indigo
       toggle:
         icon: material/weather-sunny
