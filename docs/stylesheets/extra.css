@@ -9,8 +9,8 @@
 }
 
 [data-md-color-scheme="minimal"] {
-  --md-primary-fg-color:        #000;
-  --md-primary-fg-color--light: #000;
+  --md-primary-fg-color:        #160d08;
+  --md-primary-fg-color--light: #28231D;
   --md-primary-fg-color--dark:  #000;
   --md-primary-bg-color: #FFF;
   --md-typeset-a-color: #7c4dff;
@@ -86,7 +86,7 @@
 }
 .md-content .md-typeset p {
   font-size: 16px;
-  // letter-spacing: 0.40014px;
+  letter-spacing: 0.40014px;
   // line-height: 28px;
 }
 
@@ -106,7 +106,6 @@
 
 .md-footer__inner {
   padding: 0;
-  // height: 30px;
   color: var(--md-default-fg-color);
   background-color: transparent;
 }
@@ -153,8 +152,11 @@
   margin-bottom: 0.3rem;
 }
 
-.md-typeset .md-tag {
-  // border-radius: 5px;
-  // padding-top: 5px;
-  // padding-bottom: 5px;
+.md-log {
+  color: var(--md-default-fg-color);
+  background-color: var(--md-default-fg-color);
+}
+
+.md-nav__title {
+  font-size: 17px;
 }
