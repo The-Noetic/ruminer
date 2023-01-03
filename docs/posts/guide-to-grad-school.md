@@ -1,5 +1,6 @@
 ---
 date: 2021-11-30
+comments: true
 categories:
   - Grad School
 

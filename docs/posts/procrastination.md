@@ -1,6 +1,7 @@
 ---
 date: 2019-12-25
-desc: Prudent procrastination as a productivity hack
+tags:
+  - Productivity
 categories:
   - Opinions
 

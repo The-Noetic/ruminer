@@ -1,5 +1,6 @@
 ---
 date: 2019-07-07
+comments: true
 categories:
   - Tech
   - Opinions
@@ -48,6 +49,7 @@ A company of talented individuals who failed to evalute the ethical issues.
 Court testimonials, Media, Journalism, Voice Calls... Nothing can ever be trusted again.
 
 
+comments: true
 
 
 ### Boeing 737 Crash

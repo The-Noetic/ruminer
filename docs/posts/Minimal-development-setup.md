@@ -1,6 +1,8 @@
 ---
 date: 2022-12-31
-desc: Prudent procrastination as a productivity hack
+comments: true
+tags:
+  - Productivity
 categories:
   - Programming
 ---

@@ -1,20 +1,20 @@
-site_name: The Paths of Aro
+site_name: Recordor
 theme:
+  logo: assets/logo.svg
   name: material
   custom_dir: overrides
   features:
     - header.autohide
   palette:
       # Palette toggle for light mode
-    - scheme: default
-      primary: deep orange
-      accent: indigo
+    - scheme: minimal
+      accent: purple
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
 
     # Palette toggle for dark mode
-    - scheme: slate
+    - scheme: dark
       toggle:
         icon: material/weather-night
         name: Switch to light mode
@@ -42,9 +42,11 @@ plugins:
       post_url_max_categories: 5
       categories_toc: false
   - search
-  - tags
+  - tags:
+      tags_file: tags.md
 nav:
   - index.md
+  - about.md
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
@@ -57,6 +59,9 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 repo_url: https://github.com/rishikanthc/pathsofaro
 repo_name: rishikanthc/pathsofaro
 

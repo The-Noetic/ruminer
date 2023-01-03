@@ -1,17 +1,4 @@
-# Welcome to MkDocs
+You're entering my [Digital Garden](), where I document any information / ideas I synthesize.
+This website is intendended to be a personal wiki where I mostly write about [Programming](), [Machine Learning](), [Productivity]() and sporadic thoughts.
+The articles here are in various stages of writing. Some of them are fully fleshed out while others are in the process of growing.
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
