@@ -62,6 +62,6 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-repo_url: https://github.com/rishikanthc/pathsofaro
-repo_name: rishikanthc/pathsofaro
+repo_url: https://github.com/The-Noetic/ruminer
+repo_name: The-Noetic/ruminer
 
