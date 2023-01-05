@@ -8,7 +8,7 @@ tags:
   - Website
 ---
 
-# Setup multiple github pages with different custom domains
+# Github pages with different custom domains
 
 Github Pages is an easy and nice solution to hosting static websites free of cost.
 It's as easy as navigating to the settings of your Repo and enabling Pages and
