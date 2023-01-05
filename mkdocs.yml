@@ -46,7 +46,6 @@ plugins:
       tags_file: tags.md
 nav:
   - index.md
-  - about.md
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
