@@ -1,21 +1,29 @@
 {% if page.meta.comments %}
   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
   <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-        data-repo="rishikanthc/pathsofaro"
-        data-repo-id="R_kgDOIsu7eg"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOIsu7es4CTX9J"
-        data-mapping="pathname"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="light_protanopia"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
+  <script 
+    let giscusTheme = localStorage.getItem("giscus-theme");
+    let giscusAttributes = {
+      src="https://giscus.app/client.js",
+      data-repo="The-Noetic/ruminer",
+      data-repo-id="R_kgDOIucLYA",
+      data-category="Announcements",
+      data-category-id="DIC_kwDOIucLYM4CTbA0",
+      data-mapping="pathname",
+      data-strict="1",
+      data-reactions-enabled="1",
+      data-emit-metadata="0",
+      data-input-position="top",
+      data-theme="light_protanopia",
+      data-lang="en",
+      data-loading="lazy",
+      crossorigin="anonymous",
+      "async": "",
+    };
+
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.body.appendChild(giscusScript);
   </script>
 
   <!-- Synchronize Giscus theme with palette -->
