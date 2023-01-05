@@ -41,6 +41,9 @@ If you are using MacOS, then it is a good idea to install the [brew](https://bre
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+Next we install an archiver utility called [ouch]() for compressing and decompressinf files by running
+`cargo install ouch`
+
 ## Terminal
 
 After experimenting with hyper (which was too heavy) and iterm, I went with [Alacritty](https://alacritty.org/) a
@@ -355,7 +358,8 @@ Apart from the above tools, I like to replace few of the bash commands/apps with
 written in Rust. Some of them are for appearance and some for functionality. All of these apps can be
 installed via cargo by running `cargo install <app-name>`
 
-- [Starship](starship.rs) is a custom command cross-shell prompt that is minimal, customizable and blazing fast.
+- [Starship](https://starship.rs) is a custom command cross-shell prompt that is minimal, customizable and blazing fast.
+  - Add `eval "$(starship init bash)"` to your `.bashrc`
 - [xcp](https://github.com/tarka/xcp/) is a clone of the Unix `cp` which is optimized and more efficient.
 - [lsd](https://github.com/Peltoche/lsd) is a rewrite of GNU `ls` with added features like color, icons, tree-view etc
 - [bartib](https://github.com/nikolassv/bartib) A small command line tool for time tracking

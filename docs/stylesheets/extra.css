@@ -86,7 +86,7 @@
 }
 .md-content .md-typeset p {
   font-size: 16px;
-  letter-spacing: 0.40014px;
+  // letter-spacing: 0.40014px;
   // line-height: 28px;
 }
 
@@ -130,7 +130,7 @@
 }
 
 .md-grid {
-  max-width: 1100px;
+  // max-width: 1100px;
 }
 
 .md-post__content p {
@@ -159,4 +159,8 @@
 
 .md-nav__title {
   font-size: 17px;
+}
+
+.md-header__ellipsis {
+  display: none;
 }
